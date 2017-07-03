@@ -1,0 +1,74 @@
+D, [2017-04-28T18:55:15.248697 #26101] DEBUG -- :   [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+D, [2017-04-28T18:55:15.361050 #26101] DEBUG -- :   [1m[35m (90.5ms)[0m  [1m[35mCREATE TABLE "albums" ("id" serial primary key, "title" character varying, "description" text, "title2" character varying, "description2" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "cover_file_name" character varying, "cover_content_type" character varying, "cover_file_size" integer, "cover_updated_at" timestamp, "black" boolean)[0m
+D, [2017-04-28T18:55:15.461168 #26101] DEBUG -- :   [1m[35m (95.1ms)[0m  [1m[35mCREATE TABLE "booking_pictures" ("id" serial primary key, "booking_post_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+D, [2017-04-28T18:55:15.561371 #26101] DEBUG -- :   [1m[35m (95.4ms)[0m  [1m[35mCREATE TABLE "booking_posts" ("id" serial primary key, "title" character varying, "description" text, "title2" character varying, "description2" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2017-04-28T18:55:15.650603 #26101] DEBUG -- :   [1m[35m (84.1ms)[0m  [1m[35mCREATE TABLE "contact_us" ("id" serial primary key, "email" character varying, "message" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2017-04-28T18:55:15.750914 #26101] DEBUG -- :   [1m[35m (94.4ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" serial primary key, "fb" character varying, "insta" character varying, "vk" character varying, "phone" character varying, "phone2" character varying, "phone3" character varying, "description" text, "description2" text, "adress" character varying, "adress2" character varying, "twitter" character varying, "email" character varying, "how_to_get" text, "how_to_get2" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2017-04-28T18:55:15.851130 #26101] DEBUG -- :   [1m[35m (93.9ms)[0m  [1m[35mCREATE TABLE "entertainments" ("id" serial primary key, "title" character varying, "description" text, "black" boolean, "title2" character varying, "description2" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+D, [2017-04-28T18:55:15.950543 #26101] DEBUG -- :   [1m[35m (95.0ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "album_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "picture_file_name" character varying, "picture_content_type" character varying, "picture_file_size" integer, "picture_updated_at" timestamp)[0m
+D, [2017-04-28T18:55:16.041697 #26101] DEBUG -- :   [1m[35m (89.7ms)[0m  [1m[35mCREATE TABLE "main_shots" ("id" serial primary key, "title" character varying, "description" text, "description2" text, "title2" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp)[0m
+D, [2017-04-28T18:55:16.142634 #26101] DEBUG -- :   [1m[35m (99.5ms)[0m  [1m[35mCREATE TABLE "positions" ("id" serial primary key, "align" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2017-04-28T18:55:16.242906 #26101] DEBUG -- :   [1m[35m (95.2ms)[0m  [1m[35mCREATE TABLE "post_slides" ("id" serial primary key, "description" character varying, "position_id" integer, "description2" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp, "title" character varying, "title2" character varying, "black" boolean)[0m
+D, [2017-04-28T18:55:16.365466 #26101] DEBUG -- :   [1m[35m (116.4ms)[0m  [1m[35mCREATE TABLE "posts" ("id" serial primary key, "description" text, "title" character varying, "title2" character varying, "description2" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "photo_file_name" character varying, "photo_content_type" character varying, "photo_file_size" integer, "photo_updated_at" timestamp, "black" boolean DEFAULT 'f')[0m
+D, [2017-04-28T18:55:16.465783 #26101] DEBUG -- :   [1m[35m (95.4ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" serial primary key, "booking_post_id" integer, "email" character varying, "phone_number" character varying, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start" date, "end" date)[0m
+D, [2017-04-28T18:55:16.577169 #26101] DEBUG -- :   [1m[35m (104.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "remember_digest" character varying, "admin" boolean DEFAULT 'f', "activation_digest" character varying, "activated" boolean DEFAULT 'f', "activated_at" timestamp, "reset_digest" character varying, "reset_sent_at" timestamp)[0m
+D, [2017-04-28T18:55:16.666061 #26101] DEBUG -- :   [1m[35m (84.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+D, [2017-04-28T18:55:16.668382 #26101] DEBUG -- :   [1m[35m (1.4ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+D, [2017-04-28T18:55:16.677331 #26101] DEBUG -- :   [1m[35m (7.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170407120301)[0m
+D, [2017-04-28T18:55:16.688295 #26101] DEBUG -- :   [1m[35m (8.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170401043107),
+(20170402232714),
+(20170401021502),
+(20170402225105),
+(20170401042709),
+(20170403003703),
+(20170404123940),
+(20170330233305),
+(20170401212621),
+(20170401045907),
+(20170404115539),
+(20170331010500),
+(20170404123331),
+(20170403223644),
+(20170401080727),
+(20170403182346),
+(20170403223411),
+(20170403004759),
+(20170401015757),
+(20170404135844),
+(20170406194808),
+(20170403182105),
+(20170331011829),
+(20170401215122),
+(20170331010557),
+(20170401081514),
+(20170330193857),
+(20170330193000),
+(20170401214858),
+(20170403221921);
+
+[0m
+D, [2017-04-28T18:55:16.799274 #26101] DEBUG -- :   [1m[35m (97.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2017-04-28T18:55:16.810614 #26101] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+D, [2017-04-28T18:55:16.815413 #26101] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-28T18:55:16.816873 #26101] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "production"], ["created_at", 2017-04-28 22:55:16 UTC], ["updated_at", 2017-04-28 22:55:16 UTC]]
+D, [2017-04-28T18:55:16.821372 #26101] DEBUG -- :   [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-04-28T18:55:16.823443 #26101] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+D, [2017-04-28T18:55:16.824511 #26101] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-28T18:55:16.825212 #26101] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-04-28T18:55:16.836687 #26101] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+D, [2017-04-28T18:55:16.842479 #26101] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "positions"[0m
+D, [2017-04-28T18:55:16.849110 #26101] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-28T18:55:16.850526 #26101] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "positions" ("align", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["align", "left"], ["created_at", 2017-04-28 22:55:16 UTC], ["updated_at", 2017-04-28 22:55:16 UTC]]
+D, [2017-04-28T18:55:16.854586 #26101] DEBUG -- :   [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-04-28T18:55:16.854874 #26101] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-28T18:55:16.855852 #26101] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "positions" ("align", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["align", "center"], ["created_at", 2017-04-28 22:55:16 UTC], ["updated_at", 2017-04-28 22:55:16 UTC]]
+D, [2017-04-28T18:55:16.865906 #26101] DEBUG -- :   [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-04-28T18:55:16.866597 #26101] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-28T18:55:16.867740 #26101] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "positions" ("align", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["align", "right"], ["created_at", 2017-04-28 22:55:16 UTC], ["updated_at", 2017-04-28 22:55:16 UTC]]
+D, [2017-04-28T18:55:16.877025 #26101] DEBUG -- :   [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+D, [2017-04-28T18:55:16.880567 #26101] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+D, [2017-04-28T18:55:16.968499 #26101] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2017-04-28T18:55:16.977857 #26101] DEBUG -- :   [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "sitetest.2@yandex.ua"], ["LIMIT", 1]]
+D, [2017-04-28T18:55:17.047524 #26101] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "admin", "activation_digest", "activated", "activated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "admin"], ["email", "sitetest.2@yandex.ua"], ["created_at", 2017-04-28 22:55:16 UTC], ["updated_at", 2017-04-28 22:55:16 UTC], ["password_digest", "$2a$10$gGyRSol0N.K0jHHCdSGG9.jn3VZt0I7RwtFeODos2hzPggm8zbxKq"], ["admin", true], ["activation_digest", "$2a$10$hkzjxvnpGpWqDBtPsvB3SevA6bvLZyNSwnpGa9EPuOwxYbnIOjuEq"], ["activated", true], ["activated_at", 2017-04-28 22:55:16 UTC]]
+D, [2017-04-28T18:55:17.054774 #26101] DEBUG -- :   [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
